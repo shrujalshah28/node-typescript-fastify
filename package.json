@@ -1,0 +1,70 @@
+{
+  "name": "node-typescript-fastify",
+  "version": "0.0.1",
+  "description": "A minimalist TypeScript Fastify boilerplate",
+  "keywords": [
+    "TypeScript",
+    "Fastify",
+    "nodejs",
+    "boilerplate",
+    "eslint"
+  ],
+  "main": "dist/server.js",
+  "scripts": {
+    "start": "pm2 start node-typescript-fastify.json",
+    "stop": "pm2 stop node-typescript-fastify.json",
+    "restart": "pm2 startOrRestart node-typescript-fastify.json --update-env",
+    "reload": "pm2 startOrReload node-typescript-fastify.json --update-env",
+    "dev": "nodemon",
+    "ts-node": "node -r ts-node/register/transpile-only src/server.ts",
+    "lint": "npm run eslint && npm run prettier",
+    "lint:fix": "npm run eslint:fix && npm run prettier:fix",
+    "eslint": "eslint \"src/**/*.ts\"",
+    "eslint:fix": "eslint \"src/**/*.ts\" --fix",
+    "prettier": "prettier --check \"src/**/*.ts\"",
+    "prettier:fix": "prettier --write \"src/**/*.ts\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prebuild": "rimraf dist/*",
+    "build": "tsc",
+    "build:check": "tsc --noEmit",
+    "preversion": "npm run build:check",
+    "version": "standard-version",
+    "postversion": "git push && git push --tags"
+  },
+  "dependencies": {
+    "fastify": "^3.8.0",
+    "pm2": "^4.5.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@types/node": "^14.14.7",
+    "@typescript-eslint/eslint-plugin": "^4.7.0",
+    "@typescript-eslint/parser": "^4.7.0",
+    "eslint": "^7.13.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-config-standard": "^16.0.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-promise": "^4.2.1",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.5.1",
+    "nodemon": "^2.0.6",
+    "prettier": "^2.1.2",
+    "rimraf": "^3.0.2",
+    "standard-version": "^9.0.0",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shrujalshah28/node-typescript-fastify.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shrujalshah28/node-typescript-fastify/issues"
+  },
+  "homepage": "https://github.com/shrujalshah28/node-typescript-fastify#readme",
+  "author": "Shrujal Shah <shrujal@peerbits.com>",
+  "license": "MIT"
+}
