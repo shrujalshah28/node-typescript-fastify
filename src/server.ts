@@ -6,6 +6,7 @@ const server = fastify({ logger: { level: env.LOG_LEVEL, prettyPrint: env.isDev 
 
 server.register(import('./plugins/envalid'), { env });
 server.register(import('fastify-cors'), { origin: env.ALLOWED_ORIGINS, credentials: true });
+server.register(import('fastify-cookie'));
 
 server.get('/ping', async (_request, _reply) => {
   return 'pong\n';
