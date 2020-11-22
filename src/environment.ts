@@ -25,7 +25,7 @@ type Environment = {
   PORT: number;
   SERVER_URL: string;
   LOG_LEVEL: LogLevel;
-  WHITELIST_ORIGINS: string[];
+  ALLOWED_ORIGINS: string[];
 };
 
 export type Env = Readonly<Environment & CleanEnv>;
@@ -41,5 +41,5 @@ export const env: Env = cleanEnv<Environment>(process.env, {
     default: 'error',
     choices: ['info', 'warn', 'error', 'fatal', 'trace', 'debug'],
   }),
-  WHITELIST_ORIGINS: origins({ default: undefined }),
+  ALLOWED_ORIGINS: origins({ default: undefined }),
 });
