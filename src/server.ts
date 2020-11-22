@@ -1,6 +1,10 @@
 import fastify from 'fastify';
 
-const server = fastify({ logger: true });
+import { env } from './environment';
+
+const server = fastify({ logger: { level: env.LOG_LEVEL, prettyPrint: env.isDev } });
+
+server.register(import('./plugins/envalid'), { env });
 
 server.get('/ping', async (_request, _reply) => {
   return 'pong\n';
@@ -8,7 +12,7 @@ server.get('/ping', async (_request, _reply) => {
 
 (async () => {
   try {
-    await server.listen(3000);
+    await server.listen(env.PORT);
 
     /**
      * Note:
