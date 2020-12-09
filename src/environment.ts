@@ -1,7 +1,9 @@
 import nodeURL from 'url';
 
-import { cleanEnv, str, port, url, CleanEnv, makeValidator } from 'envalid';
+import envalid, { CleanEnv } from 'envalid';
 import { LogLevel } from 'fastify';
+
+const { cleanEnv, str, port, url, makeValidator } = envalid;
 
 const origins = makeValidator<string[]>((x: string) => {
   let origins: string[];

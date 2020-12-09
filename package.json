@@ -10,13 +10,14 @@
     "eslint"
   ],
   "main": "dist/server.js",
+  "type": "module",
   "scripts": {
     "start": "pm2 start node-typescript-fastify.json",
     "stop": "pm2 stop node-typescript-fastify.json",
     "restart": "pm2 startOrRestart node-typescript-fastify.json --update-env",
     "reload": "pm2 startOrReload node-typescript-fastify.json --update-env",
     "dev": "nodemon",
-    "ts-node": "node -r ts-node/register/transpile-only src/server.ts",
+    "ts-node": "node --harmony-top-level-await --loader ts-node/esm/transpile-only --experimental-specifier-resolution=node src/server.ts",
     "lint": "npm run eslint && npm run prettier",
     "lint:fix": "npm run eslint:fix && npm run prettier:fix",
     "eslint": "eslint \"src/**/*.ts\"",

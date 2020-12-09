@@ -3,6 +3,7 @@
     {
       "name": "node-typescript-fastify",
       "script": "./dist/server.js",
+      "node_args": ["--harmony-top-level-await", "--experimental-specifier-resolution=node"],
       "instances": "max",
       "exec_mode": "cluster",
       "wait_ready": true,

@@ -1,7 +1,7 @@
 import { FastifyPluginAsync } from 'fastify';
 import fp from 'fastify-plugin';
 
-import { Env } from '../environment';
+import { Env } from '../environment.js';
 
 declare module 'fastify' {
   export interface FastifyInstance {
