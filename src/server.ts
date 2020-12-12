@@ -1,18 +1,5 @@
-import fastify from 'fastify';
-
+import server from './app.js';
 import { env } from './environment.js';
-
-const server = fastify({ logger: { level: env.LOG_LEVEL, prettyPrint: env.isDev } });
-
-server.register(import('./plugins/envalid.js'), { env });
-server.register(import('fastify-helmet'));
-server.register(import('fastify-cors'), { origin: env.ALLOWED_ORIGINS, credentials: true });
-server.register(import('fastify-cookie'));
-server.register(import('fastify-compress'));
-
-server.get('/ping', async (_request, _reply) => {
-  return 'pong\n';
-});
 
 try {
   await server.listen(env.PORT);
