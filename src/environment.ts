@@ -10,6 +10,7 @@ const origins = makeValidator<string[]>((x: string) => {
   try {
     origins = JSON.parse(x);
   } catch (error) {
+    /* istanbul ignore next */
     throw new Error(`Invalid urls: "${x}"`);
   }
   return origins.map((origin, index) => {
@@ -17,6 +18,7 @@ const origins = makeValidator<string[]>((x: string) => {
       const parseURL = new nodeURL.URL(origin);
       return parseURL.origin;
     } catch (e) {
+      /* istanbul ignore next */
       throw new Error(`Invalid url at position [${index}]: "${origin}"`);
     }
   });
