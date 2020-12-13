@@ -1,6 +1,6 @@
 {
   "name": "node-typescript-fastify",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A minimalist TypeScript Fastify boilerplate",
   "keywords": [
     "TypeScript",

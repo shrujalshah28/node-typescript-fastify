@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/shrujalshah28/node-typescript-fastify/compare/v0.0.3...v0.0.4) (2020-12-13)
+
+
+### Continuous Integration
+
+* add status badge ([088de94](https://github.com/shrujalshah28/node-typescript-fastify/commit/088de94f401287b3ebe39a36b23504a0581c75fa))
+
+
+### Tests
+
+* setup jest ([f08b449](https://github.com/shrujalshah28/node-typescript-fastify/commit/f08b4496c34bcb73a50b68ef6b411a0a4dfd155b))
+* specify root dir ([7e91ea5](https://github.com/shrujalshah28/node-typescript-fastify/commit/7e91ea522452f024f758f115aa8b473a35c43f64))
+
+
+### Build System
+
+* **deps:** bump ini from 1.3.5 to 1.3.8 ([0e809e3](https://github.com/shrujalshah28/node-typescript-fastify/commit/0e809e3716159f2d419bf2962b3ecb2c53931fad))
+* **deps:** bump systeminformation from 4.30.1 to 4.31.1 ([8d837e3](https://github.com/shrujalshah28/node-typescript-fastify/commit/8d837e3a77ded6e989989c18c3b2073afb2220a3))
+* exclude jest configuration file from build ([d63c400](https://github.com/shrujalshah28/node-typescript-fastify/commit/d63c400962a509ab2e8deb481c2cba36deb0735e))
+
 ### [0.0.3](https://github.com/shrujalshah28/node-typescript-fastify/compare/v0.0.2...v0.0.3) (2020-12-12)
 
 
