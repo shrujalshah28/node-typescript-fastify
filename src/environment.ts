@@ -1,9 +1,12 @@
 import nodeURL from 'url';
 
-import envalid, { CleanEnv } from 'envalid';
-import { LogLevel } from 'fastify';
+import envalid, { CleanedEnvAccessors } from 'envalid';
+import dotenv from 'dotenv';
+// import { LogLevel } from 'fastify';
 
 const { cleanEnv, str, port, url, makeValidator } = envalid;
+
+dotenv.config();
 
 const origins = makeValidator<string[]>((x: string) => {
   let origins: string[];
@@ -22,17 +25,17 @@ const origins = makeValidator<string[]>((x: string) => {
       throw new Error(`Invalid url at position [${index}]: "${origin}"`);
     }
   });
-}, 'origins');
+});
 
 type Environment = {
   NODE_ENV: string;
   PORT: number;
   SERVER_URL: string;
-  LOG_LEVEL: LogLevel;
+  LOG_LEVEL: string; // LogLevel;
   ALLOWED_ORIGINS: string[];
 };
 
-export type Env = Readonly<Environment & CleanEnv>;
+export type Env = Readonly<Environment & CleanedEnvAccessors>;
 
 export const env: Env = cleanEnv<Environment>(process.env, {
   NODE_ENV: str({
