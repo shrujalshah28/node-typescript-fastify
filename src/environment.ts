@@ -1,10 +1,8 @@
 import nodeURL from 'url';
 
-import envalid, { CleanedEnvAccessors } from 'envalid';
+import { CleanedEnvAccessors, cleanEnv, str, port, url, makeValidator } from 'envalid';
 import dotenv from 'dotenv';
 // import { LogLevel } from 'fastify';
-
-const { cleanEnv, str, port, url, makeValidator } = envalid;
 
 dotenv.config();
 
